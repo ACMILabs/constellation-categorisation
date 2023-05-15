@@ -5,6 +5,7 @@ import requests
 
 
 CONSTELLATION_URL = 'https://xos.acmi.net.au/api/constellations/384/'
+CONSTELLATION_URL = 'https://dff-pilot.acmi.net.au/api/constellations/7/'
 CHATGPT_MODEL = 'gpt-4'  # 'gpt-3.5-turbo'
 DEBUG = False
 CATEGORIES = [
@@ -67,9 +68,10 @@ def main():
     for link in constellation_data['links']:
         for work in [link["start"], link["end"]]:
             if work["id"] not in unique_work_ids:
-                work_description = f'{work["title"]}\n{work["brief_description"]}'
+                work_description = work.get("brief_description") or work.get("abstract")
+                object_string = f'{work["title"]}\n{work_description}'
                 print(f'{work["id"]} - {work["title"]}')
-                response, tokens = openai_client.categorise(work_description)
+                response, tokens = openai_client.categorise(object_string)
                 total_tokens += tokens
                 print(f'{CHATGPT_MODEL} categorisation: {response}\n')
                 unique_work_ids.add(work["id"])
