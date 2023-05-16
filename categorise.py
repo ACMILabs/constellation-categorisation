@@ -1,4 +1,5 @@
 """A ChatGPT constellation categorisation tool."""
+from collections import Counter
 import os
 import openai
 import requests
@@ -64,6 +65,12 @@ def main():
 
     openai_client = OpenAI()
     unique_work_ids = set()
+    categories = []
+
+    constellation_string = f'{constellation_data["name"]}\n{constellation_data["description"]}'
+    response, tokens = openai_client.categorise(constellation_string)
+    total_tokens += tokens
+    print(f'Constellation categorisation based on title/description: {response}\n')
 
     for link in constellation_data['links']:
         for work in [link["start"], link["end"]]:
@@ -72,10 +79,13 @@ def main():
                 object_string = f'{work["title"]}\n{work_description}'
                 print(f'{work["id"]} - {work["title"]}')
                 response, tokens = openai_client.categorise(object_string)
+                categories.append(response)
                 total_tokens += tokens
                 print(f'{CHATGPT_MODEL} categorisation: {response}\n')
                 unique_work_ids.add(work["id"])
 
+    most_common = dict(Counter(categories).most_common())
+    print(f'Most common categories from links: {most_common}\n')
 
     print(f'Total tokens: {total_tokens}')
 

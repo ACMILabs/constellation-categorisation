@@ -31,37 +31,30 @@ A Constellation categorisation tool using [ChatGPT completion API](https://platf
 Here's an example of the output:
 
 ```bash
-122214 - Arrkutja Tharra, Kungka Kutjara, Two Girls
-OpenAPI Tokens: 642
-gpt-4 categorisation: Video
+Constellation categorisation based on title/description: Film
 
-68417 - Bluey
-OpenAPI Tokens: 120
-gpt-4 categorisation: TV show
-
-100652 - Set design in Little J and Big Cuz
-OpenAPI Tokens: 131
-gpt-4 categorisation: TV show
-
-62086 - The Secret Life of Us
-OpenAPI Tokens: 111
-gpt-4 categorisation: TV show
-
-121855 - More Than Just a Game
-OpenAPI Tokens: 320
-gpt-4 categorisation: Videogame
-
-122228 - Robbie Hood
-OpenAPI Tokens: 197
-gpt-4 categorisation: TV show
-
-118042 - A Good Eye for Story
-OpenAPI Tokens: 130
-gpt-4 categorisation: Film
-
-120000 - Ngura Pukulpa – Happy Place
-OpenAPI Tokens: 158
+50 - Camera obscura
 gpt-4 categorisation: Artwork
 
-Total tokens: 1809
+51 - Filmanfang „Lisbon Story“ (Wim Wenders)
+gpt-4 categorisation: Film
+
+52 - Filmanfang „Sieben Frauen“ (Rudolf Thome)
+gpt-4 categorisation: Film
+
+53 - “Der plötzliche Reichtum der armen Leute von Kombach” (Volker Schlöndorff) – Collage: "Sequenz 9" mit Auszügen aus dem Arbeitsdrehbuch
+gpt-4 categorisation: Film
+
+54 - Wassersport / Kopfsprünge (mit Günther Leitz am Rollenende)
+gpt-4 categorisation: Film
+
+55 - Visit with Uncle Jacob Rosenberg in Frankfurt (and Rhine/Wiesbaden)
+gpt-4 categorisation: Film
+
+56 - "Schumann-Theater" Postkarte
+gpt-4 categorisation: Image
+
+Most common categories: {'Film': 5, 'Artwork': 1, 'Image': 1}
+
+Total tokens: 2923
 ```
