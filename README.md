@@ -31,7 +31,7 @@ A Constellation categorisation tool using [ChatGPT completion API](https://platf
 Here's an example of the output:
 
 ```bash
-Constellation categorisation based on title/description: Film
+Constellation categorisation based on its name and description: Film
 
 50 - Camera obscura
 gpt-4 categorisation: Artwork

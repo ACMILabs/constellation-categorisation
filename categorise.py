@@ -70,7 +70,7 @@ def main():
     constellation_string = f'{constellation_data["name"]}\n{constellation_data["description"]}'
     response, tokens = openai_client.categorise(constellation_string)
     total_tokens += tokens
-    print(f'Constellation categorisation based on title/description: {response}\n')
+    print(f'Constellation categorisation based on its name and description: {response}\n')
 
     for link in constellation_data['links']:
         for work in [link["start"], link["end"]]:
